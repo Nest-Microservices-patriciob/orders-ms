@@ -18,7 +18,6 @@ COPY --from=deps /usr/src/app/node_modules ./node_modules
 # Copy anything not included in .dockerignore
 COPY . .
 
-RUN npx prisma migrate deploy
 RUN npx prisma generate
 
 RUN npm run build
